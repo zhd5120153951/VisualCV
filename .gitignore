@@ -1,0 +1,17 @@
+.trae/
+docs/
+design/
+frontend/dist/
+frontend/node_modules/
+backend/.venv/
+backend/build/
+backend/dist/
+dist-desktop/
+desktop/
+desktop/electron/
+desktop/electron/.runtime/
+scripts/
+open3d/
+__pycache__/
+*.py[cod]
+.vscode/
