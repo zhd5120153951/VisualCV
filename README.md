@@ -1,4 +1,4 @@
-# cvAlgoVis
+# VisualCV
 
 一个可交互的计算机视觉实验应用：前端实时调参，后端支持 `OpenCV` 图像处理与 `Open3D` 点云基础处理，并通过独立接口分别返回结果。
 
@@ -50,7 +50,7 @@
 ## 当前目录结构（与项目现状一致）
 
 ```text
-cvAlgoVis/
+VisualCV/
   backend/
     app/
       main.py
@@ -190,8 +190,8 @@ npm run build:desktop
 
 默认产物位置：
 
-- `dist-desktop/cvAlgoVis 0.1.0.exe`
-- `dist-desktop/win-unpacked/cvAlgoVis.exe`
+- `dist-desktop/VisualCV 0.1.0.exe`
+- `dist-desktop/win-unpacked/VisualCV.exe`
 
 说明：
 
@@ -208,21 +208,21 @@ npm run build:desktop
 GET /opencv-reference
 ```
 
-| 函数 | 用途 | 核心参数 | 返回值 |
-| --- | --- | --- | --- |
-| `cv2.imread` | 从磁盘读取图像 | `filename`, `flags` | `ndarray` 或 `None` |
-| `cv2.cvtColor` | 色彩空间转换（如 BGR->GRAY） | `src`, `code` | 转换后的 `ndarray` |
-| `cv2.GaussianBlur` | 高斯滤波降噪 | `src`, `ksize`, `sigmaX` | 模糊后 `ndarray` |
-| `cv2.Canny` | 边缘检测 | `image`, `threshold1`, `threshold2`, `apertureSize` | 单通道边缘图 `ndarray` |
-| `cv2.findContours` | 轮廓查找 | `image`, `mode`, `method` | `(contours, hierarchy)` |
-| `cv2.warpPerspective` | 透视变换 | `src`, `M`, `dsize` | 变换后 `ndarray` |
-| `cv2.matchTemplate` | 模板匹配定位 | `image`, `templ`, `method` | 匹配响应图 `ndarray` |
-| `cv2.CascadeClassifier.detectMultiScale` | 级联检测（如人脸） | `image`, `scaleFactor`, `minNeighbors`, `minSize` | 检测框数组 `(x,y,w,h)` |
-| `cv2.adaptiveThreshold` | 自适应阈值二值化 | `src`, `maxValue`, `adaptiveMethod`, `thresholdType`, `blockSize`, `C` | 二值图 `ndarray` |
-| `cv2.morphologyEx` | 形态学复合操作 | `src`, `op`, `kernel` | 处理后图像 `ndarray` |
-| `cv2.grabCut` | 图割前景分割 | `img`, `mask`, `rect`, `iterCount`, `mode` | 更新后的 `mask` |
-| `cv2.goodFeaturesToTrack` | Shi-Tomasi 角点检测 | `image`, `maxCorners`, `qualityLevel`, `minDistance` | 角点坐标数组 |
-| `cv2.BFMatcher` / `cv2.FlannBasedMatcher` | 特征匹配器 | 匹配器配置参数 | 匹配器对象 |
+| 函数                                      | 用途                         | 核心参数                                                               | 返回值                  |
+| ----------------------------------------- | ---------------------------- | ---------------------------------------------------------------------- | ----------------------- |
+| `cv2.imread`                              | 从磁盘读取图像               | `filename`, `flags`                                                    | `ndarray` 或 `None`     |
+| `cv2.cvtColor`                            | 色彩空间转换（如 BGR->GRAY） | `src`, `code`                                                          | 转换后的 `ndarray`      |
+| `cv2.GaussianBlur`                        | 高斯滤波降噪                 | `src`, `ksize`, `sigmaX`                                               | 模糊后 `ndarray`        |
+| `cv2.Canny`                               | 边缘检测                     | `image`, `threshold1`, `threshold2`, `apertureSize`                    | 单通道边缘图 `ndarray`  |
+| `cv2.findContours`                        | 轮廓查找                     | `image`, `mode`, `method`                                              | `(contours, hierarchy)` |
+| `cv2.warpPerspective`                     | 透视变换                     | `src`, `M`, `dsize`                                                    | 变换后 `ndarray`        |
+| `cv2.matchTemplate`                       | 模板匹配定位                 | `image`, `templ`, `method`                                             | 匹配响应图 `ndarray`    |
+| `cv2.CascadeClassifier.detectMultiScale`  | 级联检测（如人脸）           | `image`, `scaleFactor`, `minNeighbors`, `minSize`                      | 检测框数组 `(x,y,w,h)`  |
+| `cv2.adaptiveThreshold`                   | 自适应阈值二值化             | `src`, `maxValue`, `adaptiveMethod`, `thresholdType`, `blockSize`, `C` | 二值图 `ndarray`        |
+| `cv2.morphologyEx`                        | 形态学复合操作               | `src`, `op`, `kernel`                                                  | 处理后图像 `ndarray`    |
+| `cv2.grabCut`                             | 图割前景分割                 | `img`, `mask`, `rect`, `iterCount`, `mode`                             | 更新后的 `mask`         |
+| `cv2.goodFeaturesToTrack`                 | Shi-Tomasi 角点检测          | `image`, `maxCorners`, `qualityLevel`, `minDistance`                   | 角点坐标数组            |
+| `cv2.BFMatcher` / `cv2.FlannBasedMatcher` | 特征匹配器                   | 匹配器配置参数                                                         | 匹配器对象              |
 
 ## 常见问题
 
@@ -238,9 +238,3 @@ GET /opencv-reference
 - 原因：`/code-snippet` 接口不可用（常见于后端未启动）
 - 建议：先启动后端，再刷新前端页面；后端可用时状态会变为“高亮已启用（Pygments）”
 
-## 联系方式
-
-![微信公众号](frontend/public/samples/contact.png)
-
-如果大家不想自己编译，可以
-关注微信公众号后回复：cvAlgoVis 0.1.0，免费获取cvAlgoVis 0.1.0 软件（单一exe软件可直接打开）
