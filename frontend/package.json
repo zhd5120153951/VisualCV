@@ -1,6 +1,6 @@
 {
-  "name": "cvalgovis-frontend",
-  "version": "0.1.0",
+  "name": "visualcv-frontend",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "scripts": {

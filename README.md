@@ -190,7 +190,7 @@ npm run build:desktop
 
 默认产物位置：
 
-- `dist-desktop/VisualCV 0.1.0.exe`
+- `dist-desktop/VisualCV 0.0.1.exe`
 - `dist-desktop/win-unpacked/VisualCV.exe`
 
 说明：
