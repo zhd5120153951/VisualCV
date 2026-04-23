@@ -24,7 +24,7 @@ from app.services.open3d_pipeline import process_point_cloud_file
 from app.services.pipeline import process_image
 
 
-app = FastAPI(title="cvAlgoVis API", version="0.1.0")
+app = FastAPI(title="VisualCV API", version="0.0.1")
 
 app.add_middleware(
     CORSMiddleware,
